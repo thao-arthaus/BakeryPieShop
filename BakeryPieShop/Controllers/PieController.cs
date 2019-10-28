@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BakeryPieShop.Models;
+using BakeryPieShop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BakeryPieShop.Controllers
@@ -24,7 +25,11 @@ namespace BakeryPieShop.Controllers
 
         public IActionResult Index()
         {
-            return View(_pieRepository.AllPies);
+            PieListViewModel pieListViewModel = new PieListViewModel();
+            //pass data from pie repository to viewModel
+            pieListViewModel.Pies = _pieRepository.AllPies;
+            pieListViewModel.CurrentCategory = "Cheese Cakes";
+            return View(pieListViewModel);
         }
 
     }
