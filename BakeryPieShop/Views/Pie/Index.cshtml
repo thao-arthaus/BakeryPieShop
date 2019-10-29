@@ -1,11 +1,13 @@
-﻿@model IEnumerable<BakeryPieShop.Models.Pie>
+﻿@model PieListViewModel
 @{
     ViewData["Title"] = "Index";
 }
 
 <h1>Pie List</h1>
 
-@foreach (var item in Model)
+<h3>@Model.CurrentCategory</h3>
+
+@foreach (var item in Model.Pies)
 {
     <div>
         <h2>@item.Name</h2>
