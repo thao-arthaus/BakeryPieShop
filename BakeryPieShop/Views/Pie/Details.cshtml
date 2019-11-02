@@ -1,0 +1,18 @@
+﻿@model Pie
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details @Model.Name</h2>
+
+<div>
+    <img alt="@Model.Name" src="@Model.ImageUrl" />
+    <div>
+        <h3>@Model.Price</h3>
+        <h3>
+            <a href="#">@Model.Name</a>
+        </h3>
+        <h4>@Model.ShortDescription</h4>
+        <p>@Model.LongDescription</p>
+    </div>
+</div>
